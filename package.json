@@ -4,8 +4,8 @@
   "description": "API to find The Most Awesomest Movies",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
-    "start": "npm run build & node dist/index.js",
+    "build": "tsc && tsc-alias",
+    "start": "npm run build && node dist/index.js",
     "start-dev": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,6 +21,9 @@
     "@types/node": "^20.3.1",
     "nodemon": "^2.0.22",
     "ts-node": "^10.9.1",
+    "tsc-alias": "^1.8.6",
+    "tsconfig-paths": "^4.2.0",
+    "tslib": "^2.5.3",
     "typescript": "^5.1.3"
   }
 }
