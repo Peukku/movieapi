@@ -3,19 +3,19 @@ import mongoose from 'mongoose';
 mongoose.Promise = global.Promise;
 
 const personSchema = new mongoose.Schema({
-    "firstName": String,
-    "lastName": String
+    "firstName": { type: String, trim: true },
+    "lastName": { type: String, required: true, trim: true }
 });
 
 const movieSchema = new mongoose.Schema({
-    "name": String,
-    "year": Number,
-    "genres": [String],
+    "name": { type: String, required: true, trim: true },
+    "year": { type: Number, required: true },
+    "genres": { type: [String], required: false, trim: true },
     "ageLimit": Number,
     "rating": Number,
-    "actors": [personSchema],
+    "actors": [{ type: personSchema, required: false }],
     "director": personSchema,
-    "synopsis": String
+    "synopsis": { type: String, trim: true }
 });
 
 movieSchema.index({
@@ -24,4 +24,3 @@ movieSchema.index({
 });
 
 export const Movie = mongoose.model('Movie', movieSchema);
-export const Person = mongoose.model('Person', personSchema);

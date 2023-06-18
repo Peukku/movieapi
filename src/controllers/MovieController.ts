@@ -25,7 +25,9 @@ class MovieController {
     }
 
     public addMovie = async (req: Request, res: Response) => {
-        res.send(401);
+        const movie = new Movie(req.body);
+        await movie.save();
+        res.json(movie);
     }
 
     public updateMovie = async (req: Request, res: Response) => {

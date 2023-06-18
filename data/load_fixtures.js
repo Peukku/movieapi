@@ -10,7 +10,8 @@ mongoose.connection.on('error', (err) => {
   console.error(`ERROR - ${err.message}: ` + process.env.DATABASE);
 });
 
-const Movie = require('../src/models/Movie');
+console.log(__dirname);
+const Movie = require('../dist/models/Movie');
 
 const movies = JSON.parse(fs.readFileSync(__dirname + '/movies-compact.json', 'utf-8'));
 
