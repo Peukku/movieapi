@@ -19,9 +19,13 @@ class MovieController {
     }
 
     public getMovieById = async (req: Request, res: Response) => {
-        const movie = await Movie.findById(req.params.id);
+        try {
+            const movie = await Movie.findById(req.params.id);
+            res.json(movie);
+        } catch (e) {
+            res.sendStatus(404);
+        }
 
-        res.json(movie);
     }
 
     public addMovie = async (req: Request, res: Response) => {
@@ -31,11 +35,23 @@ class MovieController {
     }
 
     public updateMovie = async (req: Request, res: Response) => {
-        res.send(401);
+        // Todo:
+        // find by id 
+        // if PUT, clear existing content
+        // update with req.body
+        // save, respond with 204
+
+        res.sendStatus(401);
     }
 
     public deleteMovie = async (req: Request, res: Response) => {
-        res.send(401);
+        try {
+            const movie = await Movie.findById(req.params.id);
+            movie?.deleteOne();
+            res.sendStatus(200);
+        } catch (e) {
+            res.sendStatus(404);
+        }
     }
 }
 

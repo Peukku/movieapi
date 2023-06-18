@@ -6,6 +6,45 @@ API to find The Most Awesome Movies
 
 Search movies, manage 'em too
 
+## How to start
+
+Built with node v20.3.0, requires MongoDB instance 
+
+```bash
+git clone <repourl>
+cd movieapi
+npm install 
+npm run load-fixtures
+```
+
+*Configure:*
+Set port (default 3000), and mongodb connection info in .env.local
+
+*Load fixtures:*
+To reset database run:
+```bash
+npm run load-fixtures
+```
+(*NOTE*: Clears Database!)
+
+*Start Server:*
+```bash
+npm run start-dev 
+```
+
+## Endpoint to test:
+
+GET all movies:
+http://127.0.0.1:3000/api/movies
+
+GET filtered list of movies:
+http://127.0.0.1:3000/api/movies?q=lost
+
+POST new movie;
+curl http://127.0.0.1:3000/api/movies -v -d "name=The Super Mario Bros. Movie&year=2023"
+
+
+
 ## Plan
 
 - [X] Project Setup
@@ -17,6 +56,8 @@ Search movies, manage 'em too
 - [ ] POST new movie
 - [ ] Simple test case
 - [ ] PUT / PATCH / DELETE movie
+- [ ] Add error handling
+- [ ] Fix response statuses
 - [ ] Add user model
 - [ ] Allow POST / PUT / PATCH / DELETE only to authenticated
 - [ ] Validate POST / PUT / PATCH parameters

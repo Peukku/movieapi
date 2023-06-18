@@ -26,8 +26,7 @@ export const handleValidationErrors = (err: any, req: Request, res: Response, ne
     if (!err.errors) return next(err);
 
     // mongoose schema validation errors
-    const errorKeys = Object.keys(err.errors);
-    res.status(400).json(errorKeys);
+    res.status(400).json(err);
 };
 
 
@@ -40,11 +39,5 @@ export const handleDevelopmentErrors = (err: any, req: Request, res: Response, n
         stackHighlighted: err.stack.replace(/[a-z_-\d]+.js:\d+:\d+/gi, '<mark>$&</mark>')
     };
     res.status(err.status || 500);
-    res.format({
-        // Based on the `Accept` http header
-        'text/html': () => {
-            res.render('error', errorDetails);
-        }, // Form Submit, Reload the page
-        'application/json': () => res.json(errorDetails) // Ajax call, send JSON back
-    });
+    res.json(errorDetails);
 };
