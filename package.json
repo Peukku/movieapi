@@ -7,7 +7,7 @@
     "build": "tsc && tsc-alias",
     "start": "npm run build && node dist/index.js",
     "start-dev": "nodemon",
-    "load-fixtures": "node ./data/load_fixtures.js",
+    "load-fixtures": "ts-node ./src/data/load_fixtures.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

@@ -6,12 +6,12 @@ dotenv.config();
 
 mongoose.connect(`${process.env.DATABASE}`);
 mongoose.Promise = global.Promise;
-mongoose.connection.on('error', (err) => {
-  console.error(`ERROR - ${err.message}: ` + process.env.DATABASE);
+mongoose.connection.on('error', (err: any) => {
+    console.error(`ERROR - ${err.message}: ` + process.env.DATABASE);
 });
 
 console.log(__dirname);
-const Movie = require('../dist/models/Movie');
+import { Movie } from '../models/Movie';
 
 const movies = JSON.parse(fs.readFileSync(__dirname + '/movies-compact.json', 'utf-8'));
 
@@ -21,7 +21,7 @@ async function loadFixtures() {
         await Movie.insertMany(movies);
         console.log("Fixture data loaded");
         process.exit();
-    } catch(e) {
+    } catch (e) {
         console.log("Errr");
         console.log(e);
         process.exit();
