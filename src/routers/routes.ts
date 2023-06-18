@@ -8,7 +8,7 @@ router.get('/', async (req: Request, res: Response) => {
     res.send('Home in routes')
 })
 
-router.get('/api/movie', movieController.getAllMovies);
-router.get('/api/movie/:id', movieController.getMovieById);
+router.get('/api/movies', movieController.getAllMovies);
+router.get('/api/movies/:id', movieController.getMovieById);
 
 export default router;

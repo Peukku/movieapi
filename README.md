@@ -8,18 +8,24 @@ Search movies, manage 'em too
 
 ## Plan
 
-- [ ] Project Setup
-- [ ] Simple Movie model
-- [ ] GET list of all movies
-- [ ] GET details of specific movie
+- [X] Project Setup
+- [X] Simple Movie model
+- [X] Add details to Movie model 
+- [X] Add data importer
+- [X] GET list of all movies
+- [X] GET details of specific movie
 - [ ] Simple test case
-- [ ] Add details to Movie model 
-- [ ] Add data importer
 - [ ] POST new movie
+- [ ] PUT / PATCH / DELETE movie
 - [ ] Add user model
-- [ ] Allow POST only to authenticated
-- [ ] Add tests
-- [ ] PUT / PATCH / DELETE
+- [ ] Allow POST / PUT / PATCH / DELETE only to authenticated
 - [ ] Validate POST / PUT / PATCH parameters
 - [ ] Document API
 - [ ] ...
+
+## Improve code base
+- [ ] Add tests
+- [ ] Add eslint
+- [ ] Add docker-compose for local Mongo
+- [ ] Switch to ORM, Prisma?
+

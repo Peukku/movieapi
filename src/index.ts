@@ -20,5 +20,5 @@ require('@/models/Movie');
 
 const port = process.env.PORT || 3333;
 app.listen(port, () => {
-  console.log(`Running on PORT ${port}`);
+  console.log(new Date().toLocaleString('fi-FI') + ` Running on PORT ${port}`);
 });
