@@ -14,6 +14,18 @@ class MovieController {
 
         res.json(movie);
     }
+
+    public addMovie = async (req: Request, res: Response) => {
+        res.send(401);
+    }
+
+    public updateMovie = async (req: Request, res: Response) => {
+        res.send(401);
+    }
+
+    public deleteMovie = async (req: Request, res: Response) => {
+        res.send(401);
+    }
 }
 
 export default MovieController;

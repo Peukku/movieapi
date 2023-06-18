@@ -14,13 +14,14 @@ Search movies, manage 'em too
 - [X] Add data importer
 - [X] GET list of all movies
 - [X] GET details of specific movie
-- [ ] Simple test case
 - [ ] POST new movie
+- [ ] Simple test case
 - [ ] PUT / PATCH / DELETE movie
 - [ ] Add user model
 - [ ] Allow POST / PUT / PATCH / DELETE only to authenticated
 - [ ] Validate POST / PUT / PATCH parameters
-- [ ] Document API
+- [ ] Document API (OPENAPI definition)
+- [ ] Add pagination, sorting
 - [ ] ...
 
 ## Improve code base
