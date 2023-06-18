@@ -1,3 +1,4 @@
+import { text } from 'body-parser';
 import mongoose from 'mongoose';
 mongoose.Promise = global.Promise;
 
@@ -15,6 +16,11 @@ const movieSchema = new mongoose.Schema({
     "actors": [personSchema],
     "director": personSchema,
     "synopsis": String
+});
+
+movieSchema.index({
+    name: 'text',
+    synopsis: 'text'
 });
 
 export const Movie = mongoose.model('Movie', movieSchema);

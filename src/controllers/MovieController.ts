@@ -1,10 +1,19 @@
 import { Request, Response } from 'express';
 import mongoose from 'mongoose';
-import { Movie, Person } from '@/models/Movie';
+import { Movie } from '@/models/Movie';
 
 class MovieController {
     public getAllMovies = async (req: Request, res: Response) => {
-        const movies = await Movie.find({}, 'name year genres director');
+        var query: Object = {};
+        if (req.query.q) {
+            query = {
+                $text: {
+                    $search: req.query.q
+                }
+            };
+        }
+
+        const movies = await Movie.find(query, 'name year genres director');
 
         res.json(movies);
     }
