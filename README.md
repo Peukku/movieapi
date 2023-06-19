@@ -35,10 +35,16 @@ npm run start-dev
 ## Endpoint to test:
 
 GET all movies:
-http://127.0.0.1:3000/api/movies
+curl http://127.0.0.1:3000/api/movies -v -X GET
 
 GET filtered list of movies:
-http://127.0.0.1:3000/api/movies?q=lost
+curl http://127.0.0.1:3000/api/movies?q=avengers -v -X GET
+
+GET details of movie with id
+curl http://127.0.0.1:3000/api/movies/648f8ab990b0f007b859b6b1 -v -X GET
+
+DELETE movie with id 
+curl http://127.0.0.1:3000/api/movies/648f8ab990b0f007b859b6b1 -v -X DELETE
 
 POST new movie;
 curl http://127.0.0.1:3000/api/movies -v -d "name=The Super Mario Bros. Movie&year=2023"
